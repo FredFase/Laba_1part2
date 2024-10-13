@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=ru.template.Aurora
+Exec=/usr/bin/ru.template.Aurora
+Name=Template
+Name[ru]=Шаблон
+
+[X-Application]
+Permissions=
+OrganizationName=ru.template
+ApplicationName=Aurora
+ExecDBus=/usr/bin/ru.template.Aurora
