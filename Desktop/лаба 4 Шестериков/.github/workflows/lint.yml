@@ -1,0 +1,24 @@
+name: Lint Code  # Название workflow, чтобы идентифицировать его в GitHub Actions
+
+on:
+  pull_request:
+    branches: [ main ]  # Запускать workflow только при создании Pull Request в ветку main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest  # Запускаем на последней версии Ubuntu
+
+    steps:
+      - name: Checkout repository  # Шаг для клонирования репозитория
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js  # Установка Node.js для запуска npm команд
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # Задаем версию Node.js, совместимую с проектом
+
+      - name: Install dependencies  # Установка всех зависимостей проекта
+        run: npm ci
+
+      - name: Run linter  # Запуск линтера для проверки кода
+        run: npm run lint
